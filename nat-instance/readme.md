@@ -1,4 +1,4 @@
-# Usage
+## Usage
 ```tf
 module "nat-instance" {
   source = "../../../../modules/nat-instance"
@@ -11,7 +11,7 @@ module "nat-instance" {
 }
 ```
 
-# Troubleshooting
+## Troubleshooting
 
 ```sh
 cat /etc/sysctl.conf
