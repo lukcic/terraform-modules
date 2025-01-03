@@ -31,7 +31,7 @@ variable "container_id" {
 variable "network" {
   type = list(object({
     name   = optional(string, "eth0")
-    bridge = optional(string, "vmbr254")
+    bridge = optional(string, "vmbr0")
     ip     = optional(string, "dhcp")
     gw     = optional(string)
     tag    = optional(string)

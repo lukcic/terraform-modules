@@ -21,14 +21,6 @@ resource "proxmox_lxc" "container" {
 
   nameserver = var.network[0].dns
 
-  # network {
-  #   name   = var.network.name
-  #   bridge = var.network.bridge
-  #   ip     = format("%s/24", var.network.ip)
-  #   gw     = var.network.gw
-  #   tag    = var.network.tag
-  # }
-
   dynamic "network" {
     for_each = var.network #!= null ? var.network : {}
     content {
@@ -51,15 +43,6 @@ resource "proxmox_lxc" "container" {
       mp      = mountpoint.value.mp
       size    = mountpoint.value.size
     }
-    # storage = "/srv/host/bind-mount-point"
-    # volume = "/srv/host/bind-mount-point"
-    # mp     = "/mnt/container/bind-mount-point"
-    // Without 'volume' defined, Proxmox will try to create a volume with
-    // the value of 'storage' + : + 'size' (without the trailing G) - e.g.
-    // "/srv/host/bind-mount-point:256".
-    // This behaviour looks to be caused by a bug in the provider.
-
-    # size   = "256G"
   }
 
   features {
