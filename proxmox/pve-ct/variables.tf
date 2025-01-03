@@ -94,3 +94,29 @@ variable "local_provisioner" {
   })
   default = {}
 }
+
+variable "proxmox_host" {
+  type = map(any)
+  default = {
+    pm_api_url = "https://example.com:8006/api2/json"
+    token_id   = "terraform@pam!terraform"
+  }
+}
+
+variable "proxmox_user" {
+  type = optional(string)
+}
+
+variable "proxmox_password" {
+  type      = optional(string)
+  sensitive = true
+}
+
+variable "proxmox_token_id" {
+  type = optional(string)
+}
+
+variable "proxmox_token_secret" {
+  type      = optional(string)
+  sensitive = true
+}
