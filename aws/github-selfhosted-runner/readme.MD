@@ -1,4 +1,5 @@
-## Usage:
+# Usage
+
 ```tf
 module "github-selfhosted-runner" {
   source = "../../modules/github-selfhosted-runner/"

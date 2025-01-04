@@ -1,4 +1,4 @@
-## Usage:
+# Usage
 
 ```tf
 module "backup" {
@@ -10,5 +10,4 @@ module "backup" {
   rules             = var.rules
   sns_topic_arn     = var.sns_topic_arn
 }
-
 ```
