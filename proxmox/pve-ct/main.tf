@@ -68,3 +68,9 @@ resource "proxmox_lxc" "container" {
     environment = var.local_provisioner.environment
   }
 }
+
+output "lxc_ids" {
+  value = {
+    for key, value in aws_instance.lxc_containers : key => value.id
+  }
+}
