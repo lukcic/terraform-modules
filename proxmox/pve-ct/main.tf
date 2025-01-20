@@ -19,7 +19,8 @@ resource "proxmox_lxc" "container" {
     size    = var.rootfs.size
   }
 
-  nameserver = var.network[0].dns
+  nameserver   = var.network[0].dns
+  searchdomain = var.searchdomain
 
   dynamic "network" {
     for_each = var.network #!= null ? var.network : {}

@@ -28,10 +28,15 @@ variable "container_id" {
   type = string
 }
 
+variable "searchdomain" {
+  type    = string
+  default = "lukcic.net"
+}
+
 variable "network" {
   type = list(object({
     name   = optional(string, "eth0")
-    bridge = optional(string, "vmbr0")
+    bridge = optional(string, "vmbr254")
     ip     = optional(string, "dhcp")
     gw     = optional(string)
     tag    = optional(string)
