@@ -23,7 +23,7 @@ resource "proxmox_lxc" "container" {
   searchdomain = var.searchdomain
 
   dynamic "network" {
-    for_each = var.network #!= null ? var.network : {}
+    for_each = var.network
     content {
       name   = network.value.name
       bridge = network.value.bridge
